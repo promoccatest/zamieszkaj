@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="properties-area recent-property" style="background-color: #FFF;">
+        <div class="container">
+            <div class="row  pr0 padding-top-40 properties-page">
+                <div class="col-md-8" style="background-color: rgb(251, 251, 251);">
+                    <div class="">
+                        <div class="single-property-wrapper">
+
+                            <div class="section">
+                                <h4 class="s-property-title">Opis</h4>
+                                <div class="s-property-content">
+                                    <p>{{ flat.description }}</p>
+                                </div>
+                            </div>
+                            <div class="section">
+                                <h4 class="s-property-title">Cena</h4>
+                                <div class="s-property-content">
+                                    <p>{{ flat.price }}</p>
+                                </div>
+                            </div>
+                            <!-- End description area  -->
+
+                            <div class="section additional-details">
+
+                                <h4 class="s-property-title">Szczegóły</h4>
+
+                                <ul class="additional-details-list clearfix">
+                                    <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Metraż</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">{{ flat.area }}</span>
+                                    </li>
+
+                                    <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Sypialnie</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">{{ flat.bedrooms }}</span>
+                                    </li>
+                                    <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Łazienki</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">{{ flat.bathrooms }}</span>
+                                    </li>
+
+                                    <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Garaże</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">{{ flat.garages }}</span>
+                                    </li>
+
+                                    <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Wygasa</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">{{ flat.expiresAt | date("Y-m-d H:i:s") }}</span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <!-- End additional-details area  -->
+
+                            <div class="section property-features">
+
+                                <h4 class="s-property-title">Akcje</h4>
+                                <ul>
+                                    <li>
+                                        {{ form_start(deleteForm, {"attr": {"class": "pull-left"} }) }}
+                                            {{ form_widget(deleteForm.submit, {"attr": {"class": "btn-danger"} }) }}
+                                            {{ form_rest(deleteForm) }}
+                                        {{ form_end(deleteForm) }}
+                                    </li>
+                                    <li>
+                                        {{ form_start(finishForm, {"attr": {"class": "pull-left"} }) }}
+                                            {{ form_widget(finishForm.submit, {"attr": {"class": "btn-warning"} }) }}
+                                            {{ form_rest(finishForm) }}
+                                        {{ form_end(finishForm) }}
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <!-- End features area  -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

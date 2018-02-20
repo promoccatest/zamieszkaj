@@ -18,11 +18,11 @@
                     <div class="col-sm-6 col-md-3 p0">
                         <div class="box-two proerty-item">
                             <div class="item-thumb">
-                                <a href="javascript:void(0)" ><img src="{{ asset("vendor/assets/img/demo/property-3.jpg") }}"></a>
+                                <a href="{{ url("flat_details", {"id" : flat.id}) }}" ><img src="{{ asset("vendor/assets/img/demo/property-3.jpg") }}"></a>
                             </div>
 
                             <div class="item-entry overflow">
-                                <h5><a href="javascript:void(0)"> {{ flat.title }} </a></h5>
+                                <h5><a href="{{ url("flat_details", {"id" : flat.id}) }}"> {{ flat.title }} </a></h5>
                                 <div class="dot-hr"></div>
                                 <span class="pull-left"><b> Metraż :</b> {{ flat.area }}m </span>
                                 <span class="proerty-price pull-right"> PLN {{ flat.price }}</span>
