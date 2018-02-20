@@ -1,0 +1,19 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <div class="content-area home-area-1 recent-property">
+        <div class="container">
+            <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
+                <h3>Witaj</h3>
+                <p>Jeśli chcesz dodać mieszkanie/dom kliknij <a href="javascript:void(0)">TO DO</a></p>
+                <p>Jeśli chcesz zobaczyć swoje oferty kliknij <a href="javascript:void(0)">TO DO</a></p>
+                {% if targetUrl %}
+                    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock fos_user_content %}

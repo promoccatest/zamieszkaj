@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}KupIZamieszkaj!{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset("vendor/assets/css/normalize.css") }}" />
+        <link rel="stylesheet" href="{{ asset("vendor/assets/css/font-awesome.min.css") }}" />
+        <link rel="stylesheet" href="{{ asset("vendor/assets/css/fontello.css") }}" />
+        <link rel="stylesheet" href="{{ asset("vendor/assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css") }}" />
+        <link rel="stylesheet" href="{{ asset("vendor/assets/fonts/icon-7-stroke/css/helper.css") }}" />
+        <link rel="stylesheet" href="{{ asset("vendor/assets/css/animate.css") }}" />
+        <link rel="stylesheet" href="{{ asset("vendor/assets/css/bootstrap-select.min.css") }}" />
+        <link rel="stylesheet" href="{{ asset("vendor/bootstrap/dist/css/bootstrap.min-template.css") }}" />
+        <link rel="stylesheet" href="{{ asset("vendor/assets/css/icheck.min_all.css") }}" />
+        <link rel="stylesheet" href="{{ asset("vendor/assets/css/price-range.css") }}" />
+        <link rel="stylesheet" href="{{ asset("vendor/assets/css/owl.carousel.css") }}" />
+        <link rel="stylesheet" href="{{ asset("vendor/assets/css/owl.theme.css") }}" />
+        <link rel="stylesheet" href="{{ asset("vendor/assets/css/owl.transitions.css") }}" />
+        <link rel="stylesheet" href="{{ asset("vendor/assets/css/style.css") }}" />
+        <link rel="stylesheet" href="{{ asset("vendor/assets/css/responsive.css") }}" />
+
+    {% endblock %}
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+<div class="container-full">
+    <div class="header-connect">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-8  col-xs-12">
+                    <div class="header-half header-call">
+                        <p>
+                            <span><i class="pe-7s-call"></i> +48 662 000 000</span>
+                            <span><i class="pe-7s-mail"></i> info@kupizamieszkaj.pl</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-offset-5  col-sm-3 col-sm-offset-1  col-xs-12">
+                    <div class="header-half header-social">
+                        <ul class="list-inline">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-vine"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-full" style="margin-top: 20px;">
+    {% if is_granted("ROLE_USER") %}
+        {% include("menuAuthenticated.html.twig") %}
+    {% else %}
+        {% include("menuAnonymous.html.twig") %}
+    {% endif %}
+</div>
+<!--End top header -->
+<div class="page-head page-head-user">
+    <div class="container">
+        <div class="row">
+            <div class="page-head-content">
+                <h1 class="page-title">Strefa użytkownika</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End page header -->
+<div class="container-full">
+    {% block body %}{% endblock %}
+</div>
+{% block javascripts %}
+    <script src="{{ asset("vendor/assets/js/modernizr-2.6.2.min.js") }}"></script>
+    <script src="{{ asset("vendor/assets/js/jquery-1.10.2.min.js") }}"></script>
+    <script src="{{ asset("vendor/assets/js/bootstrap.min.js") }}"></script>
+    <script src="{{ asset("vendor/assets/js/bootstrap-select.min.js") }}"></script>
+    <script src="{{ asset("vendor/assets/js/bootstrap-hover-dropdown.js") }}"></script>
+    <script src="{{ asset("vendor/assets/js/easypiechart.min.js") }}"></script>
+    <script src="{{ asset("vendor/assets/js/owl.carousel.min.js") }}"></script>
+    <script src="{{ asset("vendor/assets/js/wow.js") }}"></script>
+    <script src="{{ asset("vendor/assets/js/icheck.min.js") }}"></script>
+    <script src="{{ asset("vendor/assets/js/price-range.js") }}"></script>
+    <script src="{{ asset("vendor/assets/js/main.js") }}"></script>
+{% endblock %}
+</body>
+</html>

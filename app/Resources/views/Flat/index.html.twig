@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="content-area home-area-1 recent-property">
+        <div class="container">
+            <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
+                <h2>{{ content.title }}</h2>
+                <p>{{ content.body }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="properties-area recent-property" style="background-color: #FFF;">
+        <div class="container">
+            <div class="row  pr0 padding-top-40 properties-page">
+            <div class="col-md-12 clear">
+                <div id="list-type" class="proerty-th">
+                    {% for flat in flats %}
+                    <div class="col-sm-6 col-md-3 p0">
+                        <div class="box-two proerty-item">
+                            <div class="item-thumb">
+                                <a href="javascript:void(0)" ><img src="{{ asset("vendor/assets/img/demo/property-3.jpg") }}"></a>
+                            </div>
+
+                            <div class="item-entry overflow">
+                                <h5><a href="javascript:void(0)"> {{ flat.title }} </a></h5>
+                                <div class="dot-hr"></div>
+                                <span class="pull-left"><b> Metraż :</b> {{ flat.area }}m </span>
+                                <span class="proerty-price pull-right"> PLN {{ flat.price }}</span>
+                                <p style="display: none;">{{ flat.description }}</p>
+                                <div class="property-icon">
+                                    <img src="{{ asset("vendor/assets/img/icon/bed.png") }}">({{ flat.bedrooms }})|
+                                    <img src="{{ asset("vendor/assets/img/icon/shawer.png") }}">({{ flat.bathrooms }})|
+                                    <img src="{{ asset("vendor/assets/img/icon/cars.png") }}">({{ flat.garages }})
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
