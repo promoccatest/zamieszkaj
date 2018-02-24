@@ -25,9 +25,9 @@ class FlatType extends AbstractType{
             ->add("title", TextType::class, ["label" => "Nazwa", "attr" => ["class" => "form-control"] ])
             ->add("description", TextareaType::class, ["label" => "Opis", "attr" => ["class" => "form-control"] ])
             ->add("price", NumberType::class, ["label" => "Cena", "attr" => ["class" => "form-control"] ])
-            ->add("area", IntegerType::class, ["label" => "Metraż", "attr" => ["class" => "form-control"] ])
-            ->add("bedrooms", IntegerType::class, ["label" => "Sypialnie", "attr" => ["class" => "form-control"] ])
-            ->add("bathrooms", IntegerType::class, ["label" => "Łazienki", "attr" => ["class" => "form-control"] ])
+            ->add("area", NumberType::class, ["label" => "Metraż", "attr" => ["class" => "form-control"] ])
+            ->add("bedrooms", NumberType::class, ["label" => "Sypialnie", "attr" => ["class" => "form-control"] ])
+            ->add("bathrooms", NumberType::class, ["label" => "Łazienki", "attr" => ["class" => "form-control"] ])
             ->add("garages", IntegerType::class, ["label" => "Garaże", "attr" => ["class" => "form-control"]])
             ->add("expiresAt", DateTimeType::class, ["label" => "Data zakończenia", "data" => new \DateTime("+1 day +10 minutes")])
             ->add("submit", SubmitType::class, ["label" => "Zapisz", "attr" => ["class" => "btn btn-default"] ]);
