@@ -1,0 +1,7 @@
+{% extends "FOSUserBundle::layout.admin.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    {{ include('@User/Security/login_content.html.twig') }}
+{% endblock fos_user_content %}

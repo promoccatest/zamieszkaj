@@ -2,15 +2,18 @@
 /**
  * Created by PhpStorm.
  * User: Krzysztof
- * Date: 2018-02-24
- * Time: 17:05
+ * Date: 2018-02-26
+ * Time: 11:20
  */
+
 namespace AppBundle\Admin;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-class FlatAdmin extends AbstractAdmin {
+
+
+class UserAdmin extends AbstractAdmin {
     /**
      * Skonfigurowanie pól dla formularza edycji/tworzenia obiektu
      *
@@ -19,14 +22,9 @@ class FlatAdmin extends AbstractAdmin {
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('title', 'text')
-            ->add('description', 'textarea')
-            ->add('price', 'number')
-            ->add('area', 'number')
-            ->add('bedrooms', 'number')
-            ->add('bathrooms', 'number')
-            ->add('garages', 'number')
-            ->add('expiresAt', 'datetime')
+            ->add('username', 'text')
+            ->add('email', 'textarea')
+            ->add('enabled', 'checkbox')
         ;
     }
     /**
@@ -37,8 +35,8 @@ class FlatAdmin extends AbstractAdmin {
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('title')
-            ->add('expiresAt')
+            ->add('username')
+            ->add('email')
         ;
     }
     /**
@@ -49,12 +47,13 @@ class FlatAdmin extends AbstractAdmin {
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('title')
-            ->add('price')
-            ->add('area')
-            ->add('bedrooms')
-            ->add('bathrooms')
-            ->add('expiresAt')
+            ->addIdentifier('username')
+            ->add('email')
+            ->add('enabled')
+            ->add('last_login', 'datetime', array(
+                'label' => 'Last login',
+                'pattern' => 'dd MMM y G'
+            ))
         ;
     }
 }

@@ -30,6 +30,8 @@ framework:
     assets: ~
     php_errors:
         log: true
+    templating:
+        engines: ['twig']
 
 # Twig Configuration
 twig:
@@ -87,3 +89,23 @@ sonata_block:
         # enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
             contexts: [admin]
+
+sonata_admin:
+    title:      KiZ
+    title_logo: img/gray_circles.svg
+    dashboard:
+        groups:
+            sonata.admin.group.flat_homes:
+                keep_open:            true
+                label:                Flats and Homes
+                label_catalogue:      ~
+                icon:                 '<i class="fa fa-building"></i>'
+                items:
+                    - admin.flat
+            sonata.admin.group.users:
+                            keep_open:            true
+                            label:                Users
+                            label_catalogue:      ~
+                            icon:                 '<i class="fa fa-users"></i>'
+                            items:
+                                - admin.user
